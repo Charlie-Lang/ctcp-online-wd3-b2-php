@@ -35,6 +35,10 @@ echo "<p>$num1 / $num2 = $result</p>";
 
 $result = $num1 % $num2;
 echo "<p>$num1 % $num2 = $result</p>";
+
+$result = $num1 . $num2;
+echo "<p>$num1 . $num2 = $result</p>";
 ?>
+asdasd
 </body>
 </html>
