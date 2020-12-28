@@ -15,10 +15,10 @@
 ?>
 <h2>Count DOWN</h2>
 <?php
-	$i=10;
-	while ($i>=1) {
-		echo "The number is $i <br/>";
-		$i--;
+	$j=10;
+	while ($j>=1) {
+		echo "The number is $j <br/>";
+		$j--;
 	}
 ?>
 <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>

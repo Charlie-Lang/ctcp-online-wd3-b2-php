@@ -22,6 +22,11 @@ echo "<b>moo</b>";
 <li><a href="day13-c.php">to day13-c file</a></li>
 <li><a href="day13-d.php">to day13-d file</a></li>
 <li><a href="day13-e.php">to day13-e file</a></li>
+<li><a href="day14-a.php">to day14-a file</a></li>
+<li><a href="day14-b.php">to day14-b file</a></li>
+<li><a href="day14-c.php">to day14-c file</a></li>
+<li><a href="day14-d.php">to day14-d file</a></li>
+<li><a href="day14-e.php">to day14-e file</a></li>
 </ul>
 </body>
 </html>
