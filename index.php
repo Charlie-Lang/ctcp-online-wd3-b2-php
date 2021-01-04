@@ -36,8 +36,15 @@ echo "<b>moo</b>";
 		<li><a href="day15-d.php">to day15-d file</a></li>
 		</ul>
 	</div>
-	<div class="col"></div>
-	<div class="col"></div>
+	<div class="col">
+		<h2>php - mysql connection</h2>
+		<ul>
+		<li><a href="db-connection/day16-a.php">to day16-a file</a></li>
+		<li><a href="db-connection/day16-b-insert.php">to day16-b-insert file</a></li>
+		<li><a href="db-connection/day16-c-insert.php">to day16-c-insert file</a></li>
+		<li><a href="db-connection/day16-d-select.php">to day16-d-select file</a></li>
+		</ul>
+	</div>
 </div>
 <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 </body>
