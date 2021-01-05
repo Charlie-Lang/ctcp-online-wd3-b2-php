@@ -43,6 +43,10 @@ echo "<b>moo</b>";
 		<li><a href="db-connection/day16-b-insert.php">to day16-b-insert file</a></li>
 		<li><a href="db-connection/day16-c-insert.php">to day16-c-insert file</a></li>
 		<li><a href="db-connection/day16-d-select.php">to day16-d-select file</a></li>
+		<li><a href="db-connection/day17-a-select.php">to day17-a-select file</a></li>
+		<li><a href="db-connection/day17-b-select.php">to day17-b-select file</a></li>
+		<li><a href="db-connection/day17-c-select.php">to day17-c-select file</a></li>
+		<li><a href="db-connection/day17-d-select.php">to day17-d-select file</a></li>
 		</ul>
 	</div>
 </div>
