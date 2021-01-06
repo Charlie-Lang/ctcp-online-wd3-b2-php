@@ -34,6 +34,7 @@ echo "<b>moo</b>";
 		<li><a href="day15-b.php">to day15-b file</a></li>
 		<li><a href="day15-c.php">to day15-c file</a></li>
 		<li><a href="day15-d.php">to day15-d file</a></li>
+		<li><a href="day18-b-uploadForm.php">to day18-b-uploadForm file</a></li>
 		</ul>
 	</div>
 	<div class="col">

@@ -99,7 +99,7 @@ if ($runQuery) {
 		$resultMessage = "failed";
 	}
 }else {
-	$resultMessage .= "Insert Query Failed<br/>";
+	$resultMessage .= "Update Query Failed<br/>";
 }
 
 // echo "$resultMessage";
