@@ -6,6 +6,35 @@
 	<title></title>
 </head>
 <body class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="day16-c-insert.php">INSERT QUERY</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Picture Upload
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="day19-a-fileUploadForm.php">Upload image</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="day19-c-viewImage.php">View all image</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<hr/>
 <?php
 $rowPerPage = 5;
 $sqlWhere = "1";

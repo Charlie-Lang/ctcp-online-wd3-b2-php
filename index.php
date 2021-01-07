@@ -48,9 +48,12 @@ echo "<b>moo</b>";
 		<li><a href="db-connection/day17-b-select.php">to day17-b-select file</a></li>
 		<li><a href="db-connection/day17-c-select.php">to day17-c-select file</a></li>
 		<li><a href="db-connection/day17-d-select.php">to day17-d-select file</a></li>
+		<li><a href="db-connection/day19-a-fileUploadForm.php">to day19-a-fileUploadForm.php file</a></li>
+		<li><a href="db-connection/day19-c-viewImage.php">to day19-c-viewImage file</a></li>
 		</ul>
 	</div>
 </div>
+<a href="htmlDiscuss">html initial discussions</a>
 <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

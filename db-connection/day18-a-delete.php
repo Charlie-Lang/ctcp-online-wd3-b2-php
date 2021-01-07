@@ -1,5 +1,37 @@
+<?php include 'connection.php';
+if (isset($_GET['submit'])) {
+// to declare all items to be used in the sql query
+$pid=$mysqli->real_escape_string($_GET['pid']);
+
+// variables to check and recieve the output
+$resultMessage=""; //SQL query is executed
+$runQuery=true; //we will change it to false to stop the sql query from executing
+
+//filters
+
+// the sql query that will be executed
+$sqlQuery="DELETE FROM 
+	tbl_sample3
+WHERE fld_id='$pid'";
+
+// echo "$sqlQuery";
+
+if ($runQuery) {
+	$result = $mysqli->query($sqlQuery);
+	if ($result == true) {
+		$resultMessage = "Row Deleted";
+	} else {
+		$resultMessage = "Delete failed";
+	}
+}else {
+	$resultMessage .= "Delete Query Failed<br/>";
+}
+
+// echo "$resultMessage";
+header("Location: day17-d-select.php?result=$resultMessage");
+}
+?>
 <!DOCTYPE html>
-<?php include 'connection.php'; ?>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -59,39 +91,7 @@ if (isset($_GET['id'])) {
 <a href="day17-d-select.php">Cancel</a>
 </form>
 
-<?php
-if (isset($_GET['submit'])) {
-// to declare all items to be used in the sql query
-$pid=$mysqli->real_escape_string($_GET['pid']);
 
-// variables to check and recieve the output
-$resultMessage=""; //SQL query is executed
-$runQuery=true; //we will change it to false to stop the sql query from executing
-
-//filters
-
-// the sql query that will be executed
-$sqlQuery="DELETE FROM 
-	tbl_sample3
-WHERE fld_id='$pid'";
-
-echo "$sqlQuery";
-
-if ($runQuery) {
-	$result = $mysqli->query($sqlQuery);
-	if ($result == true) {
-		$resultMessage = "Row Deleted";
-	} else {
-		$resultMessage = "Delete failed";
-	}
-}else {
-	$resultMessage .= "Delete Query Failed<br/>";
-}
-
-// echo "$resultMessage";
-header("Location: day17-d-select.php?result=$resultMessage");
-}
-?>
 
 <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 </body>

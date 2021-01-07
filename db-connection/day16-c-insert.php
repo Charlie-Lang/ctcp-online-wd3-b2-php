@@ -20,7 +20,10 @@ Product Price: <input type="text" name="pPrice"><br/>
 Product Quantity: <input type="text" name="pQty"><br/>
 <button type="submit" name="submit">Send</button>
 </form>
-<hr/><a href="day16-c.php" class="btn btn-danger">RESET</a><hr/>
+<hr/>
+<a href="day16-c.php" class="btn btn-danger">RESET</a>
+<hr/>
+<a href="day17-d-select.php" class="btn btn-primary">view all items</a><hr/>
 <?php
 if (isset($_GET['submit'])) {
 // to declare all items to be used in the sql query

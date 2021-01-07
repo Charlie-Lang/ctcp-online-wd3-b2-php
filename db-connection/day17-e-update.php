@@ -1,5 +1,57 @@
+<?php include 'connection.php'; 
+if (isset($_GET['submit'])) {
+// to declare all items to be used in the sql query
+$pName=$mysqli->real_escape_string($_GET['pName']);
+$category=$mysqli->real_escape_string($_GET['category']);
+$pPrice=$mysqli->real_escape_string($_GET['pPrice']);
+$pQty=$mysqli->real_escape_string($_GET['pQty']);
+$pid=$mysqli->real_escape_string($_GET['pid']);
+
+// variables to check and recieve the output
+$resultMessage=""; //SQL query is executed
+$runQuery=true; //we will change it to false to stop the sql query from executing
+
+//filters
+if (empty($pName) || strlen(trim($pName)) == 0) {
+	$runQuery=false;
+	$resultMessage.="Name Textbox is empty<br/>";
+} //https://stackoverflow.com/questions/2352779/if-string-only-contains-spaces#2352789
+if (is_numeric($pPrice) == false) {
+	$runQuery=false;
+	$resultMessage.="Price is not a number<br/>";
+}
+if (is_numeric($pQty) == false) {
+	$runQuery=false;
+	$resultMessage.="Quantity is not a number<br/>";
+}
+
+// the sql query that will be executed
+$sqlQuery="UPDATE 
+	tbl_sample3 
+SET fld_product='$pName'
+	,fld_category='$category'
+	,fld_price='$pPrice'
+	,fld_quantity='$pQty' 
+WHERE fld_id='$pid'";
+
+//echo "$sqlQuery";
+
+if ($runQuery) {
+	$result = $mysqli->query($sqlQuery);
+	if ($result == true) {
+		$resultMessage = "success";
+	} else {
+		$resultMessage = "failed";
+	}
+}else {
+	$resultMessage .= "Update Query Failed<br/>";
+}
+
+// echo "$resultMessage";
+header("Location: day17-d-select.php?result=$resultMessage");
+}
+?>
 <!DOCTYPE html>
-<?php include 'connection.php'; ?>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -52,60 +104,7 @@ if (isset($_GET['id'])) {
 <a href="day17-d-select.php">Cancel</a>
 </form>
 
-<?php
-if (isset($_GET['submit'])) {
-// to declare all items to be used in the sql query
-$pName=$mysqli->real_escape_string($_GET['pName']);
-$category=$mysqli->real_escape_string($_GET['category']);
-$pPrice=$mysqli->real_escape_string($_GET['pPrice']);
-$pQty=$mysqli->real_escape_string($_GET['pQty']);
-$pid=$mysqli->real_escape_string($_GET['pid']);
 
-// variables to check and recieve the output
-$resultMessage=""; //SQL query is executed
-$runQuery=true; //we will change it to false to stop the sql query from executing
-
-//filters
-if (empty($pName) || strlen(trim($pName)) == 0) {
-	$runQuery=false;
-	$resultMessage.="Name Textbox is empty<br/>";
-} //https://stackoverflow.com/questions/2352779/if-string-only-contains-spaces#2352789
-if (is_numeric($pPrice) == false) {
-	$runQuery=false;
-	$resultMessage.="Price is not a number<br/>";
-}
-if (is_numeric($pQty) == false) {
-	$runQuery=false;
-	$resultMessage.="Quantity is not a number<br/>";
-}
-
-
-// the sql query that will be executed
-$sqlQuery="UPDATE 
-	tbl_sample3 
-SET fld_product='$pName'
-	,fld_category='$category'
-	,fld_price='$pPrice'
-	,fld_quantity='$pQty' 
-WHERE fld_id='$pid'";
-
-echo "$sqlQuery";
-
-if ($runQuery) {
-	$result = $mysqli->query($sqlQuery);
-	if ($result == true) {
-		$resultMessage = "success";
-	} else {
-		$resultMessage = "failed";
-	}
-}else {
-	$resultMessage .= "Update Query Failed<br/>";
-}
-
-// echo "$resultMessage";
-header("Location: day17-d-select.php?result=$resultMessage");
-}
-?>
 
 <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 </body>
