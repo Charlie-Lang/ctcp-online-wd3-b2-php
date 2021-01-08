@@ -50,7 +50,10 @@ echo "<b>moo</b>";
 		<li><a href="db-connection/day17-d-select.php">to day17-d-select file</a></li>
 		<li><a href="db-connection/day19-a-fileUploadForm.php">to day19-a-fileUploadForm.php file</a></li>
 		<li><a href="db-connection/day19-c-viewImage.php">to day19-c-viewImage file</a></li>
+		<li><a href="db-connection/day20-a-carousel1.php">to day20-a-carousel1 file</a></li>
 		</ul>
+		<hr/>
+		<a href="withLogin/" class="btn btn-warning">php sql with login</a>
 	</div>
 </div>
 <a href="htmlDiscuss">html initial discussions</a>
