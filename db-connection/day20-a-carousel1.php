@@ -12,7 +12,7 @@
 <div id="pictureTable" class="carousel carousel-dark slide" data-bs-ride="carousel">
 <ol class="carousel-indicators">
 <?php
-$sqlCount = "SELECT COUNT(*) FROM tbl_image";
+$sqlCount = "SELECT COUNT(*) FROM tbl_image WHERE fld_rotation=1";
 $countResult = $mysqli->query($sqlCount);
 $rowCount = $countResult->fetch_array();
 
@@ -29,7 +29,7 @@ for ($i=0; $i < $totalRow; $i++) {
 </ol>
 <div class="carousel-inner">
 <?php
-$sqlQuery = "SELECT * FROM tbl_image";
+$sqlQuery = "SELECT * FROM tbl_image  WHERE fld_rotation=1";
 
 $result = $mysqli->query($sqlQuery);
 
@@ -59,4 +59,8 @@ $active="";
 <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<?php
+// ALTER TABLE `tbl_image` ADD `fld_rotation` BOOLEAN NOT NULL DEFAULT TRUE AFTER `fld_imgnotes`;
+?>
+
 

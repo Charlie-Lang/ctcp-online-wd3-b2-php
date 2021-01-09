@@ -1,5 +1,16 @@
-<?php include 'connection.php';
-if (isset($_GET['submit'])) {
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+include 'connection.php';
+$username = "welcome";
+if (isset($_SESSION['userID'])) {
+	$username = $_SESSION['userName'];
+} else {
+	header("Location: day20-logout.php");
+}
+
+if (isset($_GET['submit']) && isset($_SESSION['userID'])) {
 // to declare all items to be used in the sql query
 $pid=$mysqli->real_escape_string($_GET['pid']);
 
@@ -88,11 +99,67 @@ if (isset($_GET['id'])) {
 	echo $row['fld_id'];
 }
 ?>">
-<a href="day17-d-select.php">Cancel</a>
+<a href="day20-selectPrivate.php">Cancel</a>
 </form>
 
 
 
 <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<?php
+    include "connection.php";
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $conn->real_escape_string($_POST['name']);
+    $age = $conn->real_escape_string($_POST['age']);
+    $position = $conn->real_escape_string($_POST['position']);
+    $salary = $conn->real_escape_string($_POST['salary']);
+    
+    $sqlInsert = "INSERT INTO
+    tblemployee
+    (Emp_Name
+    ,Emp_Age
+    ,Position
+    ,Salary)
+    VALUES
+    ('$name'
+    ,'$age'
+    ,'$position'
+    ,'$salary')";
+
+    echo "$sqlInsert";
+
+    if ($conn->query($sqlInsert)) {
+    echo "Record Success";
+    } else {
+    echo "Record Failed";
+    }
+    } else {
+    	echo "asknakjsdfk ja";
+    }
+?>
+
+</head>
+<body>
+<form action="" method="POST">
+    Name:<input type="text" name="name"><br>
+
+    Age:<input type="text" name="age"><br>
+
+    Position:<input type="text" name="position"><br>
+
+    Salary:<input type="text" name="salary"><br>
+
+    <input type="submit" name="submit" value="Record">
+</form>
 </body>
 </html>

@@ -150,8 +150,8 @@ while ($row = $result->fetch_assoc()) {
 	echo "<td>".$row['fld_category']."</td>";
 	echo "<td>".$row['fld_price']."</td>";
 	echo "<td>".$row['fld_quantity']."</td>";
-	echo "<td><a href='day17-e-update.php?id=".$row['fld_id']."'>Update</a></td>";
-	echo "<td><a href='day18-a-delete.php?id=".$row['fld_id']."'>Delete</a></td>";
+	echo "<td><a href='day20-update.php?id=".$row['fld_id']."'>Update</a></td>";
+	echo "<td><a href='day20-delete.php?id=".$row['fld_id']."'>Delete</a></td>";
 	echo "</tr>";
 }
 ?>

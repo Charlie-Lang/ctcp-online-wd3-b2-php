@@ -1,5 +1,16 @@
-<?php include 'connection.php'; 
-if (isset($_GET['submit'])) {
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+include 'connection.php';
+$username = "welcome";
+if (isset($_SESSION['userID'])) {
+	$username = $_SESSION['userName'];
+} else {
+	header("Location: day20-logout.php");
+}
+
+if (isset($_GET['submit']) && isset($_SESSION['userID'])) {
 // to declare all items to be used in the sql query
 $pName=$mysqli->real_escape_string($_GET['pName']);
 $category=$mysqli->real_escape_string($_GET['category']);
@@ -101,7 +112,7 @@ if (isset($_GET['id'])) {
 	echo $row['fld_id'];
 }
 ?>">
-<a href="day17-d-select.php">Cancel</a>
+<a href="day20-selectPrivate.php">Cancel</a>
 </form>
 
 
